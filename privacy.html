@@ -19,33 +19,36 @@
 </header>
 <h1>envy privacy policy</h1>
 <p class="stamp">Last updated: 11 October 2026</p>
-<p>envy is a Discord bot. This page explains what it stores, why, and how to get rid of it. If anything here is unclear, ask in the support server.</p>
+<p>envy is a private Discord bot that runs in one server and cannot be added to others. This page explains what it stores, why, and how to get rid of it. If anything here is unclear, open a ticket in the server.</p>
 <h2>What is stored</h2>
 <p>Discord IDs, and nothing else that identifies you. That means your user ID, the server ID, and whichever channel or role IDs a feature needs to work. No usernames, display names, email addresses, avatars, IP addresses or payment details are saved.</p>
 <p>Those IDs are attached to:</p>
-<ul><li>invite counts per inviter, and a record of which inviter a joining member came from</li><li>warnings, each one holding the target's ID, the moderator's ID, a reason and a timestamp</li><li>the role IDs held for a member while they are jailed, so they can be given back on release</li><li>the ID of a booster's personal role</li><li>economy balances, streaks, and message and voice activity counts used for leaderboards</li><li>per server settings: the prefix, ticket configuration, autoresponders, blocked words, log channels</li></ul>
+<ul><li>invite counts per inviter, and a record of which inviter a joining member came from</li><li>warnings, each one holding the target's ID, the moderator's ID, a reason and a timestamp</li><li>the role IDs held for a member while they are jailed, so they can be given back on release</li><li>the ID of a booster's personal role</li><li>economy balances, streaks, and message and voice activity counts used for leaderboards</li><li>settings: prefixes, ticket configuration, autoresponders, blocked words and phrases set against a member, log channels</li></ul>
 <h2>Message content</h2>
 <p>Message content is read but not kept, with one exception.</p>
 <p>Commands, the blocked word filter, the invite link filter and the snipe command all read message text in memory and discard it. Snipes hold the last deleted or edited message for a channel in memory only, and are lost whenever the bot restarts. None of this is written to disk.</p>
-<p>The exception is ticket transcripts. When a ticket channel is closed, the conversation in that one channel is saved as an HTML file, posted to a staff channel chosen by the server, and sent by DM to the person who opened the ticket. A server owner can turn transcripts off entirely, and any transcript can be deleted on request.</p>
+<p>The exception is ticket transcripts. When a ticket channel is closed, the conversation in that one channel is saved as an HTML document, posted to a staff channel and sent by DM to the person who opened the ticket.</p>
+<p>That document is also stored in a Postgres database hosted by <a href="https://supabase.com">Supabase</a>, so it can be opened in a browser. Supabase acts as a data processor on our behalf and encrypts what it holds at rest. They are the only third party that ever sees any of this data.</p>
+<p>Transcripts are not public. Opening one requires signing in with Discord, and access is then checked against your permissions, so anyone without permission is refused. Transcripts can be turned off entirely, and any transcript can be deleted on request.</p>
 <h2>The AI feature</h2>
 <p>A server may designate one channel where the bot replies conversationally. That feature runs a self hosted language model on hardware we control. Message content from it is never sent to OpenAI, Anthropic, Google or any other third party, and no message is ever used to train or fine tune a model.</p>
 <h2>The image filter</h2>
 <p>Image attachments and image links are checked by a classifier running on the same machine as the bot. Images are not uploaded to any third party service, and nothing is retained after the check completes.</p>
 <h2>Where the data lives</h2>
-<p>Everything is stored as JSON files on a private server we operate. No third party has access to it. Nothing is sold, rented, shared or used for advertising.</p>
+<p>Everything apart from ticket transcripts is stored as JSON files on a private server we operate, encrypted at rest. Transcripts additionally sit in the Supabase hosted database described above.</p>
+<p>Supabase is the only third party involved, and only for transcripts. Nothing is sold, rented, shared with anyone else, or used for advertising.</p>
 <h2>Keeping it</h2>
 <p>Data is kept for as long as the bot is in your server and the feature is in use. When the bot is removed from a server, that server's data stops being used and can be deleted on request.</p>
 <h2>Getting it deleted</h2>
 <p>Ask and it is removed.</p>
 <ul><li>A server owner can request everything stored for their server be deleted.</li><li>Any user can request their own records and ticket transcripts be deleted.</li></ul>
-<p>Requests are handled in the support server. There is no charge and no requirement to give a reason.</p>
+<p>Requests are handled by opening a ticket in the server, or by messaging the owner directly. There is no charge and no requirement to give a reason.</p>
 <h2>Changes</h2>
-<p>If this policy changes, the updated date at the top changes with it. Material changes are announced in the support server.</p>
+<p>If this policy changes, the updated date at the top changes with it. Material changes are announced in the server.</p>
 <h2>Contact</h2>
-<p>Open a ticket in the support server, or message the bot owner on Discord.</p>
+<p>Open a ticket in the server, or message the bot owner on Discord.</p>
 <footer>
-  envy is a discord bot. questions, or to have your data deleted, open a ticket in the support server.
+  envy is a private discord bot running in one server. questions, or to have your data deleted, open a ticket in that server.
 </footer>
 </div>
 </body>
