@@ -1,0 +1,100 @@
+:root {
+  --bg: #000000;
+  --card: #0b0b0b;
+  --line: #1c1c1c;
+  --ink: #ededed;
+  --dim: #8c8c8c;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.75 ui-sans-serif, -apple-system, "Segoe UI", Inter, Roboto, sans-serif;
+  letter-spacing: .1px;
+}
+
+.wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 16px 96px;
+}
+
+a { color: var(--ink); text-underline-offset: 3px; }
+a:hover { color: #fff; }
+
+.top {
+  display: flex;
+  gap: 18px;
+  align-items: baseline;
+  padding-bottom: 28px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid var(--line);
+}
+
+.top .name { font-weight: 600; letter-spacing: .4px; }
+.top nav { margin-left: auto; display: flex; gap: 18px; }
+.top nav a { color: var(--dim); text-decoration: none; font-size: 14px; }
+.top nav a:hover, .top nav a[aria-current] { color: var(--ink); }
+
+h1 { font-size: 30px; font-weight: 600; margin: 0 0 6px; letter-spacing: -.2px; }
+
+.stamp { color: var(--dim); font-size: 13px; margin: 0 0 44px; }
+
+h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 40px 0 10px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  letter-spacing: .3px;
+}
+
+h2:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+
+p { margin: 0 0 14px; color: #cfcfcf; }
+
+ul { margin: 0 0 14px; padding-left: 20px; color: #cfcfcf; }
+li { margin-bottom: 7px; }
+
+code {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 1px 6px;
+  font-size: 13.5px;
+}
+
+.cards { display: grid; gap: 14px; margin: 36px 0 0; }
+
+.card {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-decoration: none;
+}
+
+.card:hover { border-color: #2e2e2e; }
+.card b { display: block; font-weight: 600; margin-bottom: 4px; }
+.card span { color: var(--dim); font-size: 14px; }
+
+footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  color: var(--dim);
+  font-size: 13px;
+}
+
+@media (max-width: 520px) {
+  .wrap { padding: 48px 16px 72px; }
+  h1 { font-size: 25px; }
+  .top { flex-wrap: wrap; gap: 10px; }
+  .top nav { margin-left: 0; width: 100%; }
+}
